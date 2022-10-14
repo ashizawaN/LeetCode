@@ -4,7 +4,7 @@ class Solution:
         right = len(nums) - 1
         
         while left <= right:
-            m = (left + right) // 2
+            m = (left+right) // 2
             if nums[m] == target:
                 return m
             elif target < nums[m]:
