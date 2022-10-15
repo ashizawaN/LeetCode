@@ -4,7 +4,7 @@ class Solution:
         x=[]
         
         for i in range(len(nums)):
-            if nums[i]==target:
+            if nums[i] == target:
                 x.append(i)
                 
         return x
