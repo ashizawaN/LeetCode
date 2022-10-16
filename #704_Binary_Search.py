@@ -1,17 +1,18 @@
 from typing import List
 
+
 class Solution:
     def search(self, nums: List[int], target: int) -> int:
         left = 0
         right = len(nums) - 1
         
         while left <= right:
-            m = (left+right) // 2
-            if nums[m] == target:
-                return m
-            elif target < nums[m]:
-                right = m - 1
+            mid = (left+right) // 2
+            if nums[mid] == target:
+                return mid
+            elif target < nums[mid]:
+                right = mid - 1
             else:
-                left = m + 1
+                left = mid + 1
         
         return -1
