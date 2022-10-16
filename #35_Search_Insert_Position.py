@@ -1,18 +1,20 @@
 from typing import List
+
+
 class Solution:
     def searchInsert(self, nums: List[int], target: int) -> int:
         left = 0
         right = len(nums) - 1
         
         while left <= right:
-            m = (left+right) // 2
+            mid = (left+right) // 2
             
-            if target > nums[m]:
-                left = m + 1 
-            elif target < nums[m]:
-                right = m - 1
+            if target > nums[mid]:
+                left = mid + 1 
+            elif target < nums[mid]:
+                right = mid - 1
             else:
-                return m
+                return mid
             
         return left
                 
