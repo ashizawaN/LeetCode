@@ -11,13 +11,13 @@ class Solution:
         right = n
         
         while left <= right:
-            m = (left + right) // 2
-            gussed = guess(m)
+            mid = (left+right) // 2
+            gussed = guess(mid)
             
             if gussed == 1:
-                left = m + 1
+                left = mid + 1
             else:
-                right = m - 1
+                right = mid - 1
         
         return left
             
