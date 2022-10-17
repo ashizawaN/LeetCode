@@ -3,7 +3,7 @@ from typing import List
 
 class Solution:
     def countNegatives(self, grid: List[List[int]]) -> int:    
-        def BinarySearch(num):
+        def binary_search(num):
             left = 0
             right = len(num)
         
@@ -17,7 +17,7 @@ class Solution:
         
         count = 0
         for arr in grid:
-            count += BinarySearch(arr)
+            count += binary_search(arr)
         return count
     
     
