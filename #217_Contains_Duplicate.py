@@ -3,8 +3,10 @@ from typing import List
 
 class Solution:
     def containsDuplicate(self, nums: List[int]) -> bool:        
-        nums.sort()
-        for i in range(1,len(nums)):
-            if nums[i] == nums[i-1]:
+        x = set()
+        for index in range(len(nums)):
+            if nums[index] in x:
                 return True
+            x.add(nums[index])
         return False
+        
