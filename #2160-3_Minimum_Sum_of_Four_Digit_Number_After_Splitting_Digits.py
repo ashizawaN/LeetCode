@@ -5,15 +5,16 @@ class Solution:
     def minimumSum(self, num: int) -> int:
         nums = [int(i) for i in list(str(num))]
 
+        
         def merge_sort(arr: List[int]) -> int:
             if len(arr) <= 1:
                 return arr
             mid = len(arr) // 2
             left = arr[:mid]
             right = arr[mid:]
-            left = merge_sort(left)
-            right = merge_sort(right)
-            return merge(left, right)
+            merge_l = merge_sort(left)
+            merge_r = merge_sort(right)
+            return merge(merge_l, merge_r)
 
         def merge(left: int, right: int) -> int:
             merged = []
