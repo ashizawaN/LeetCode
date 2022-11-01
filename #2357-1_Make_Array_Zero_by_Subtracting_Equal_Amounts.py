@@ -6,7 +6,7 @@ class Solution:
         L = len(nums)
         count = 0
         while nums != [0]*L:
-            min_num = min([i for i in nums if i > 0])
+            min_num = min([num for num in nums if num > 0])
             for i in range(L):
                 if nums[i] != 0:
                     nums[i] -= min_num
