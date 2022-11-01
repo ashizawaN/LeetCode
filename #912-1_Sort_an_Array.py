@@ -15,6 +15,7 @@ class Solution:
                     j += 1
                 k += 1
             array[k:] = a[i:] if i < len(a) else b[j:]
+           
                
         def merge_sort(nums: List[int]):
             if len(nums) == 1:
