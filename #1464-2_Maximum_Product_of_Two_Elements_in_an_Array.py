@@ -15,11 +15,11 @@ class Solution:
             if nums[i] < MIN_NUM or nums[i] > MAX_NUM:
                 raise ValueError("The value of nums shoud be 1 or more and 10**3 or less.")
         
-        i = 0
-        j = 0
-        for number in nums:
-            if number > i:
-                i, j = number, i
-            elif number > j:
-                j = number
-        return (i-1) * (j-1)
+        largest_num = 0
+        second_largest_num = 0
+        for num in nums:
+            if num > largest_num:
+                largest_num, second_largest_num = num, largest_num
+            elif num > second_largest_num:
+                second_largest_num = num
+        return (largest_num-1) * (second_largest_num-1)
