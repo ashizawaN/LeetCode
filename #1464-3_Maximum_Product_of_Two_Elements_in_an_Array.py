@@ -15,7 +15,7 @@ class Solution:
             if nums[i] < MIN_NUM or nums[i] > MAX_NUM:
                 raise ValueError("The value of nums shoud be 1 or more and 10**3 or less.")
         
-        i = max(nums)
-        nums.remove(i)
-        j = max(nums)
-        return (i-1) * (j-1)
+        largest_num = max(nums)
+        nums.remove(largest_num)
+        second_largest_num = max(nums)
+        return (largest_num-1) * (second_largest_num-1)
