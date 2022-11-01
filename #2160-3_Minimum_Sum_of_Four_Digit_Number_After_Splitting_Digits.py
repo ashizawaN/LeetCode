@@ -5,7 +5,6 @@ class Solution:
     def minimumSum(self, num: int) -> int:
         nums = [int(i) for i in list(str(num))]
 
-        
         def merge_sort(arr: List[int]) -> int:
             if len(arr) <= 1:
                 return arr
@@ -31,6 +30,6 @@ class Solution:
             if r_i < len(right):
                 merged.extend(right[r_i:])
             return merged
-        
-        sort_nums = merge_sort(nums)    
+
+        sort_nums = merge_sort(nums)
         return sort_nums[0]*10 + sort_nums[1]*10 + sort_nums[2] + sort_nums[3]
