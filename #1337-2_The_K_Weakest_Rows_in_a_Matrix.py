@@ -1,9 +1,8 @@
 from typing import List
 
 
-
 class Solution:
     def kWeakestRows(self, mat: List[List[int]], k: int) -> List[int]:
-        m = len(mat)
-        rows = sorted(range(m), key=lambda i: (mat[i], i))
-        return (rows[i] for i in range(k))
+        L = len(mat)
+        rows = sorted(range(L), key=lambda i: mat[i])
+        return [rows[i] for i in range(k)]
