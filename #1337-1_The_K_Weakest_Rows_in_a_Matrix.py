@@ -1,15 +1,15 @@
-from typing import List
 import heapq
+from typing import List
 
 
 class Solution:
     def kWeakestRows(self, mat: List[List[int]], k: int) -> List[int]:
         heap = []
-        ans = []
-        for col, row in enumerate(mat):
-            x = (sum(row), col)
+        k_weekest_rows = []
+        for i, row in enumerate(mat):
+            x = (sum(row), i)
             heapq.heappush(heap, x)
-        for col in range(k):
+        for i in range(k):
             row = heapq.heappop(heap)
-            ans.append(row[1])
-        return ans
+            k_weekest_rows.append(row[1])
+        return k_weekest_rows
