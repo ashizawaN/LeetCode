@@ -12,6 +12,6 @@ class Solution:
                 heapq.heappush(heap, (val, i))
         heap.sort(key=lambda x: x[1])
         ans = []
-        for i in heap:
-            ans.append(i[0])
+        for num in heap:
+            ans.append(num[0])
         return ans
