@@ -2,7 +2,7 @@ from typing import List
 
 
 class TreeNode:
-    def __init__(self, val=0, left=None, right=None):
+    def __init__(self, val=0, left=None, right=None) -> None:
         self.val = val
         self.left = left
         self.right = right
@@ -14,7 +14,7 @@ class Solution:
             return
         low = 0
         high = len(nums) - 1
-        mid = (high + low) // 2
+        mid = (high+low) // 2
         root = TreeNode(nums[mid])
         root.left = self.sortedArrayToBST(nums[:mid])
         root.right = self.sortedArrayToBST(nums[mid+1:])
