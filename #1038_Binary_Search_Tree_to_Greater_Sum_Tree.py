@@ -1,0 +1,23 @@
+# time complexity: O(n)
+# space complexity: O(logn)
+from typing import Optional
+
+
+class TreeNode:
+    def __init__(self, val=0, left: Optional["TreeNode"] = None, right: Optional["TreeNode"] = None) -> None:
+        self.val = val
+        self.left = left
+        self.right = right
+
+
+class Solution:
+    def bstToGst(self, root: TreeNode) -> TreeNode:
+
+        def rec(node, sum_num):
+            if not node:
+                return sum_num
+            node.val += rec(node.right, sum_num)
+            return rec(node.left, node.val)
+
+        rec(root, 0)
+        return root
