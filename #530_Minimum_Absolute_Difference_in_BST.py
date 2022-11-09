@@ -20,4 +20,5 @@ class Solution:
             left = rec(node.left, low, node.val)
             right = rec(node.right, node.val, high)
             return min(left, right)
+
         return rec(root, -inf, inf)
