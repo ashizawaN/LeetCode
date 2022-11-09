@@ -1,5 +1,8 @@
 # time complexity: O(n)
 # space complexity: O(n)
+from typing import Optional
+
+
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
         self.val = val
@@ -8,8 +11,8 @@ class TreeNode:
 
 
 class Solution:
-    def findTarget(self, root: TreeNode, k: int) -> bool:
-        def rec(node: TreeNode) -> bool:
+    def findTarget(self, root: Optional[TreeNode], k: int) -> bool:
+        def rec(node: Optional[TreeNode]) -> bool:
             if not node:
                 return False
             if node.val in vals:
