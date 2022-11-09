@@ -9,17 +9,15 @@ class Solution:
         MAX_SCORE = 10**6
         MIN_LENGTH = 1
         MAX_LENGTH = 10**4
-        count = 0
+
         assert type(score) == list, "The type of score should be list."
-        for i in range(len(score)):
-            if type(score[i]) != "int":
-                count += 1
-        assert count == 0, "The type of a value in nums should be an integer."
-        if len(score) < MIN_LENGTH or len(score) > MAX_LENGTH:
-            raise ValueError("The range of score should be 1 or more and 10**4 or less.")
         for i in range(len(score)):
             if score[i] < MIN_SCORE or score[i] > MAX_SCORE:
                 raise ValueError("The value of score should be 1 or more and 10**6 or less")
+            if type(score[i]) != "int":
+                raise TypeError("The type of a value in nums should be integer.")
+        if len(score) < MIN_LENGTH or len(score) > MAX_LENGTH:
+            raise ValueError("The range of score should be 1 or more and 10**4 or less.")
 
         heap = []
         ans = [None] * len(score)
