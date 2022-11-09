@@ -1,8 +1,8 @@
-from typing import List
+from typing import List, Optional
 
 
 class TreeNode:
-    def __init__(self, val=0, left=None, right=None) -> None:
+    def __init__(self, val=0, left: Optional["TreeNode"] = None, right: Optional["TreeNode"] = None) -> None:
         self.val = val
         self.left = left
         self.right = right
