@@ -1,12 +1,15 @@
+from typing import Optional
+
+
 class TreeNode:
-    def __init__(self, val=0, left=None, right=None):
+    def __init__(self, val=0, left: Optional["TreeNode"] = None, right: Optional["TreeNode"] = None) -> None:
         self.val = val
         self.left = left
         self.right = right
 
 
 class Solution:
-    def rangeSumBST(self, root: TreeNode, low: int, high: int) -> int:
+    def rangeSumBST(self, root: Optional[TreeNode], low: int, high: int) -> int:
         if not root:
             return 0
         if root.val < low:
