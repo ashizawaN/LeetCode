@@ -1,5 +1,8 @@
 # time complexity: O(n)
 # space complexity: O(n)
+from typing import Optional
+
+
 class TreeNode:
     def __init__(self, val=0, left=None, right=None) -> None:
         self.val = val
@@ -8,10 +11,10 @@ class TreeNode:
 
 
 class Solution:
-    def increasingBST(self, root: TreeNode) -> TreeNode:
+    def increasingBST(self, root: Optional[TreeNode]) -> TreeNode:
         def inorder(node: TreeNode) -> TreeNode:
             if not node:
-                return
+                return None
             inorder(node.left)
             vals.append(node.val)
             inorder(node.right)
@@ -19,7 +22,7 @@ class Solution:
         inorder(root)
         tree = TreeNode(vals[0])
         tmp = tree
-        for i in vals[1:]:
-            tmp.right = TreeNode(i)
+        for num in vals[1:]:
+            tmp.right = TreeNode(num)
             tmp = tmp.right
         return tree
