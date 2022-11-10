@@ -10,7 +10,8 @@ class Solution:
         MIN_LENGTH = 1
         MAX_LENGTH = 10**4
 
-        assert type(score) == list, "The type of score should be list."
+        if type(score) != list:
+            raise TypeError("The type of score should be list.")
         for i in range(len(score)):
             if score[i] < MIN_SCORE or score[i] > MAX_SCORE:
                 raise ValueError("The value of score should be 1 or more and 10**6 or less")
