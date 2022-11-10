@@ -11,7 +11,7 @@ class TreeNode:
 
 
 class Solution:
-    def bstToGst(self, root: TreeNode) -> TreeNode:
+    def bstToGst(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
 
         def rec(node, sum_num):
             if not node:
