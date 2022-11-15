@@ -11,13 +11,15 @@ class TreeNode:
 
 
 class Solution:
-    def increasingBST(self, root: Optional[TreeNode]) -> TreeNode:
-        def inorder(node: TreeNode) -> TreeNode:
+    def increasingBST(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
+        def inorder(node: Optional[TreeNode]) -> None:
             if not node:
                 return None
+
             inorder(node.left)
             vals.append(node.val)
             inorder(node.right)
+
         vals = []
         inorder(root)
         tree = TreeNode(vals[0])
