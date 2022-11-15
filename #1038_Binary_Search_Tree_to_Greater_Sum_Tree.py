@@ -13,9 +13,10 @@ class TreeNode:
 class Solution:
     def bstToGst(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
 
-        def rec(node, sum_num):
+        def rec(node: Optional[TreeNode], sum_num: int) -> int:
             if not node:
                 return sum_num
+
             node.val += rec(node.right, sum_num)
             return rec(node.left, node.val)
 
