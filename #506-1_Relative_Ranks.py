@@ -21,7 +21,7 @@ class Solution:
             raise ValueError("The range of score should be 1 or more and 10**4 or less.")
 
         heap = []
-        ans = [None] * len(score)
+        array = [None] * len(score)
         r = 1
         rank = ["Gold Medal", "Silver Medal", "Bronze Medal"]
 
@@ -30,8 +30,8 @@ class Solution:
         while len(heap) != 0:
             _, i = heapq.heappop(heap)
             if r <= 3:
-                ans[i] = rank[r-1]
+                array[i] = rank[r-1]
             else:
-                ans[i] = str(r)
+                array[i] = str(r)
             r += 1
-        return ans
+        return array
